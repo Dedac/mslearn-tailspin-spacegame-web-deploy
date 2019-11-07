@@ -47,7 +47,8 @@ namespace TailSpin.SpaceGame.Web.Controllers
                     "Pinwheel",
                     "NGC 1300",
                     "Messier 82",
-                }
+                },
+                Scores = new List<ScoreProfile>()
             };
 
             try
@@ -77,6 +78,8 @@ namespace TailSpin.SpaceGame.Web.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
                 return View(vm);
             }
         }
@@ -91,6 +94,8 @@ namespace TailSpin.SpaceGame.Web.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
                 return RedirectToAction("/");
             }
         }
