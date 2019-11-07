@@ -62,7 +62,7 @@ stages:
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
       
-- job: BuildDacpac
+  - job: BuildDacpac
     pool:
       vmImage: 'windows-2019'
     steps:
@@ -162,7 +162,7 @@ stages:
 
 - stage: 'Dev'
   displayName: 'Deploy to the dev environment'
-  dependsOn: Build
+  dependsOn: DBAVerificationApply
   jobs:
   - deployment: Deploy
     pool:
